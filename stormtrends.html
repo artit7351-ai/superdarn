@@ -100,7 +100,7 @@ footer{border-top:1px solid var(--hairline);margin-top:2rem;padding-top:1.3rem;
 
 <header class="masthead">
   <p class="eyebrow">Trend fits &middot; per-station polynomial models &middot; pick a storm</p>
-  <h1>Australia Storm Trends</h1>
+  <h1>Australia Storm Trends</h1> by Athid for superDARN project
   <p class="standfirst">The actual measured curve for each station (or, for 2003, GIM grid cell), spikes
   included &mdash; that's the bold line, through the <b id="stormName">&mdash;</b>
   (<span id="stormRange">&mdash;</span>). A polynomial fitted across the whole window sits behind it as a
@@ -248,10 +248,12 @@ function buildPanel(qkey){
   };
   PLAYHEAD_SHAPE_IDX[qkey] = zeroRef.length;
   const layout = {
-    margin:{l:44,r:14,t:6,b:26}, paper_bgcolor:'#080c14', plot_bgcolor:'#080c14',
+    margin:{l:64,r:14,t:6,b:40}, paper_bgcolor:'#080c14', plot_bgcolor:'#080c14',
     font:{color:'#dbe8f7', size:10, family:'IBM Plex Mono'},
-    xaxis:{type:'date', gridcolor:'#1c2a3d', tickformat:'%d %b', fixedrange:true},
-    yaxis:{title:q.unit, gridcolor:'#1c2a3d', fixedrange:true, zeroline:false},
+    xaxis:{type:'date', gridcolor:'#3a5070', gridwidth:1.5, tickformat:'%d %b', fixedrange:true,
+           tickfont:{size:14}},
+    yaxis:{title:{text:q.unit, font:{size:14}}, tickfont:{size:14},
+           gridcolor:'#3a5070', gridwidth:1.5, fixedrange:true, zeroline:false},
     shapes: zeroRef.concat([playhead]),
     showlegend:false, legend:{font:{size:9,color:'#9db4cc'}, orientation:'h', y:-0.25},
   };
